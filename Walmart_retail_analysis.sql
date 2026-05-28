@@ -83,10 +83,10 @@ SELECT TOP 10
     AVG(CASE WHEN is_holiday = 1 THEN weekly_sales END) AS holiday_avg,
     AVG(CASE WHEN is_holiday = 0 THEN weekly_sales END) AS normal_avg,
     ROUND(AVG(CASE WHEN is_holiday = 1 THEN weekly_sales END) - 
-          AVG(CASE WHEN is_holiday = 0 THEN weekly_sales END), 2) AS holiday_lift
+          AVG(CASE WHEN is_holiday = 0 THEN weekly_sales END), 2) AS sales_diff
 FROM sales
 GROUP BY department
-ORDER BY holiday_lift DESC;
+ORDER BY sales_diff DESC;
 
 ---
 
@@ -107,7 +107,7 @@ SELECT
         WHEN is_holiday = 0 AND next_week_holiday = 1 THEN 'Pre-Holiday Week'
         ELSE 'Regular Week'
     END AS week_type,
-    FORMAT(AVG(total_sales), 'N0') AS avg_weekly_sales
+    ROUND((AVG(total_sales), 2) AS avg_weekly_sales
 FROM WeeklySummary
 GROUP BY 
     CASE 
@@ -116,22 +116,3 @@ GROUP BY
         ELSE 'Regular Week'
     END;
 
----
-
--- TASK 6: YEAR-OVER-YEAR (YoY) GROWTH ANALYSIS
--- Final high-level performance metrics using LAG()
-WITH YearlySales AS (
-    SELECT 
-        YEAR([date]) AS sales_year,
-        SUM(weekly_sales) AS total_annual_sales
-    FROM sales
-    GROUP BY YEAR([date])
-)
-SELECT 
-    sales_year,
-    total_annual_sales,
-    LAG(total_annual_sales) OVER (ORDER BY sales_year) AS prev_year_sales,
-    ROUND(((total_annual_sales - LAG(total_annual_sales) OVER (ORDER BY sales_year)) 
-           / LAG(total_annual_sales) OVER (ORDER BY sales_year)) * 100, 2) AS yoy_growth_percent
-FROM YearlySales
-ORDER BY sales_year DESC;
