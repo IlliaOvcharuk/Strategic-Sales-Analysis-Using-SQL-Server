@@ -42,7 +42,9 @@ Based on the SQL queries executed, the following trends were identified:
 
 ### Task 2 — Sales Efficiency Index (Sales per Sq. Ft.)
 *Measuring actual performance relative to store size.*
-![image task 2]
+
+<img width="824" height="141" alt="image" src="https://github.com/user-attachments/assets/6e0dfc7c-40f7-4c1c-b918-aefb04232b10" />
+
 
 > **Insight:** While Type A generates the most revenue in absolute numbers, its efficiency per square foot is only marginally better than Type B — making Type B potentially more cost-effective to scale.
 
@@ -50,7 +52,9 @@ Based on the SQL queries executed, the following trends were identified:
 
 ### Task 3 — External Factors: Fuel Price Impact
 *Grouping weeks by fuel price threshold to test sensitivity of consumer behavior.*
-![image task 3]
+
+<img width="655" height="104" alt="image" src="https://github.com/user-attachments/assets/8f1ffe07-82e1-4fd8-98ce-4c2d3de7a770" />
+
 
 > **Insight:** Sales difference is negligible (~$195). Fuel price has minimal correlation with weekly sales, indicating strong customer loyalty and inelastic demand at Walmart.
 
@@ -58,7 +62,9 @@ Based on the SQL queries executed, the following trends were identified:
 
 ### Task 4 — Holiday-Sensitive Departments (Top 10)
 *Finding departments with the highest sales lift during holiday weeks.*
-![image task 4]
+
+<img width="742" height="365" alt="image" src="https://github.com/user-attachments/assets/4ef79d00-6a50-48af-acd5-9254b147c0e8" />
+
 
 > **Insight:** Department 72 (and others in Top 10) shows high holiday sensitivity. These specific departments should be prioritized for seasonal stock planning and marketing campaigns.
 
@@ -66,7 +72,9 @@ Based on the SQL queries executed, the following trends were identified:
 
 ### Task 5 — Pre-Holiday Consumer Behavior (LEAD Window Function)
 *Using `LEAD()` to look ahead and classify weeks before a holiday.*
-![image task 5]
+
+<img width="613" height="138" alt="image" src="https://github.com/user-attachments/assets/ef0d128b-9cca-4816-98aa-66ad6d6f4fc5" />
+
 
 > **Insight:** Sales begin spiking **one week BEFORE** the actual holiday. This validates the need for supply chain managers to pre-position stock at least 7 days in advance.
 ---
