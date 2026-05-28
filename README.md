@@ -100,6 +100,3 @@ The analysis joins three main relational tables:
 2. Run the `walmart_retail_analysis.sql` script.
 3. The script will automatically create the necessary views and output the analytical reports.
 
-## Author
-**Illia**  
-*Aspiring Data Analyst / BI Developer*
