@@ -29,6 +29,43 @@ Based on the SQL queries executed, the following trends were identified:
 
 ---
 
+🔍 Analysis Tasks & Results
+Task 1 — Market Share by Store Type
+Analyzing each store type's contribution to total revenue.
+<img width="291" height="79" alt="image" src="https://github.com/user-attachments/assets/59319d60-d698-424f-bd42-0e80874bf0a5" />
+
+
+Insight: Type A stores dominate with nearly 3/4 of all revenue, but that alone doesn't mean they're the most efficient.
+
+
+Task 2 — Sales Efficiency Index (Sales per Sq. Ft.)
+Measuring actual performance relative to store size.
+![image task 2]
+
+Insight: While Type A generates the most revenue in absolute numbers, its efficiency per square foot is only marginally better than Type B — making Type B potentially more cost-effective to scale.
+
+
+Task 3 — External Factors: Fuel Price Impact
+Grouping weeks by fuel price threshold to test sensitivity of consumer behavior.
+![image task 3]
+
+Insight: Sales difference is negligible (~$195). Fuel price has minimal correlation with weekly sales, indicating strong customer loyalty and inelastic demand at Walmart.
+
+
+Task 4 — Holiday-Sensitive Departments (Top 10)
+Finding departments with the highest sales lift during holiday weeks.
+![image task 4]
+
+Insight: Department 20 shows the highest holiday sensitivity — nearly 60% uplift during holidays. These departments should be prioritized for seasonal stock planning.
+
+
+Task 5 — Pre-Holiday Consumer Behavior (LEAD Window Function)
+Using LEAD() to look ahead and classify weeks before a holiday.
+![image task 5]
+
+Insight: Sales begin spiking one week BEFORE the actual holiday. This validates the need for supply chain managers to pre-position stock at least 7 days in advance.
+---
+
 ## Analysis Workflow
 1. **Cleaning & Pre-processing:** Deduplicating the `features` table and normalizing `markdown` data.
 2. **Market Share Analysis:** Determining the sales contribution of different store types (A, B, C).
