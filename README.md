@@ -33,6 +33,7 @@ Based on the SQL queries executed, the following trends were identified:
 
 ### Task 1 — Market Share by Store Type
 *Analyzing each store type's contribution to total revenue.*
+
 <img width="294" height="80" alt="image" src="https://github.com/user-attachments/assets/c83bc9bd-b94a-4085-a63e-310eacde856b" />
 
 > **Insight:** Type A stores dominate with nearly 3/4 of all revenue, but that alone doesn't mean they're the most efficient.
